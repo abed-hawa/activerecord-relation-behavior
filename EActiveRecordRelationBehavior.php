@@ -297,7 +297,8 @@ class EActiveRecordRelationBehavior extends CActiveRecordBehavior
 		}
 
 		// @todo add support for composite primary keys
-		if (!is_array($pk)) {
+		// @todo add support for relation keys mapping
+		if (!is_array($pk) && !is_array($relation[2])) {
 			$this->owner->setAttribute($relation[2], $pk);
 		}
 	}
